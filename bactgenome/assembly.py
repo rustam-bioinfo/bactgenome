@@ -1,21 +1,36 @@
 from __future__ import annotations
-from typing import List, Dict, Any
+from typing import List, Dict, Any, Optional
 
-from bactgenome.contig import Contig
-from bactgenome.io import read_fasta, write_fasta
-from bactgenome.qc import compute_stats
+from .annotation import Annotation
+from .contig import Contig
+from .io import read_fasta, write_fasta, read_gff
 
 class Assembly:
     """Represents a collection of contigs that make up a genome assembly."""
 
-    def __init__(self, contigs: List[Contig]) -> None:
+    def __init__(self, contigs: List[Contig], annotations: Optional[List[Annotation]] = None) -> None:
         """
         Initializes an Assembly object.
 
         Args:
             contigs (list[Contig]): A list of Contig objects.
+            annotations (Optional[list[Annotation]], optional): A list of Annotation objects. Defaults to None.
         """
         self.contigs: List[Contig] = contigs
+        self.annotations: List[Annotation] = annotations if annotations is not None else []
+
+    def add_annotations_from_gff(self, gff_path: str) -> Assembly:
+        """
+        Loads annotations from a GFF file and adds them to the assembly.
+
+        Args:
+            gff_path (str): The path to the GFF file.
+
+        Returns:
+            Assembly: The current Assembly object with added annotations.
+        """
+        self.annotations.extend(read_gff(gff_path))
+        return self
 
     @classmethod
     def from_fasta(cls, file_path: str) -> Assembly:
@@ -134,4 +149,12 @@ class Assembly:
         Returns:
             dict: A dictionary of assembly statistics.
         """
-        return compute_stats(self)
+        return {
+            "total_contigs": len(self.contigs),
+            "total_length": self.total_length(),
+            "n50": self.n50(),
+            "l50": self.l50(),
+            "gc_content": round(self.gc_content() * 100, 2),
+            "min_length": min((c.length() for c in self.contigs), default=0),
+            "max_length": max((c.length() for c in self.contigs), default=0),
+        }

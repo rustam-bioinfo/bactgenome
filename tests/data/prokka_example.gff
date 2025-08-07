@@ -1,0 +1,39 @@
+##gff-version 3
+##sequence-region Scaffold_1_cov_18.34 1 476160
+##sequence-region Scaffold_2_cov_14.12 1 457666
+##sequence-region Scaffold_3_cov_17.15 1 401628
+##sequence-region Scaffold_4_cov_18.15 1 376672
+##sequence-region Scaffold_5_cov_16.83 1 369959
+##sequence-region Scaffold_6_cov_18.64 1 335340
+##sequence-region Scaffold_7_cov_16.08 1 319073
+##sequence-region Scaffold_8_cov_16.28 1 277551
+##sequence-region Scaffold_9_cov_17.54 1 252858
+##sequence-region Scaffold_10_cov_18.55 1 250891
+##sequence-region Scaffold_11_cov_17.29 1 233125
+##sequence-region Scaffold_12_cov_18.40 1 188594
+##sequence-region Scaffold_13_cov_17.74 1 172490
+##sequence-region Scaffold_14_cov_17.54 1 169154
+##sequence-region Scaffold_15_cov_18.86 1 129636
+##sequence-region Scaffold_16_cov_19.32 1 111416
+##sequence-region Scaffold_17_cov_19.59 1 99634
+##sequence-region Scaffold_18_cov_19.66 1 86396
+##sequence-region Scaffold_19_cov_15.98 1 82039
+##sequence-region Scaffold_20_cov_17.78 1 81023
+##sequence-region Scaffold_21_cov_14.37 1 80634
+##sequence-region Scaffold_22_cov_19.25 1 77907
+##sequence-region Scaffold_23_cov_17.98 1 77020
+##sequence-region Scaffold_24_cov_16.22 1 71844
+##sequence-region Scaffold_25_cov_14.14 1 71164
+##sequence-region Scaffold_26_cov_17.26 1 60034
+##sequence-region Scaffold_27_cov_16.85 1 40920
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	10	156	.	+	0	ID=NKBHOGAP_00001;eC_number=7.2.4.2;Name=oadB_1;db_xref=COG:COG1883;gene=oadB_1;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P13156;locus_tag=NKBHOGAP_00001;product=Oxaloacetate decarboxylase beta chain
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	216	926	.	+	0	ID=NKBHOGAP_00002;eC_number=2.4.2.52;Name=citG_1;gene=citG_1;inference=ab initio prediction:Prodigal:002006,protein motif:HAMAP:MF_00397;locus_tag=NKBHOGAP_00002;product=2-(5''-triphosphoribosyl)-3'-dephosphocoenzyme-A synthase
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	952	2010	.	-	0	ID=NKBHOGAP_00003;eC_number=3.4.21.107;Name=degS;db_xref=COG:COG0265;gene=degS;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P0AEE3;locus_tag=NKBHOGAP_00003;product=Serine endoprotease DegS
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	2098	3465	.	-	0	ID=NKBHOGAP_00004;eC_number=3.4.21.107;Name=degQ;db_xref=COG:COG0265;gene=degQ;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P39099;locus_tag=NKBHOGAP_00004;product=Periplasmic pH-dependent serine endoprotease DegQ
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	3639	4037	.	-	0	ID=NKBHOGAP_00005;Name=yhcB;db_xref=COG:COG3105;gene=yhcB;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P0ADW3;locus_tag=NKBHOGAP_00005;product=Inner membrane protein YhcB
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	4228	5355	.	+	0	ID=NKBHOGAP_00006;Name=zapE_1;db_xref=COG:COG1485;gene=zapE_1;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P64612;locus_tag=NKBHOGAP_00006;product=Cell division protein ZapE
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	5621	6049	.	+	0	ID=NKBHOGAP_00007;Name=rplM;db_xref=COG:COG0102;gene=rplM;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P0AA10;locus_tag=NKBHOGAP_00007;product=50S ribosomal protein L13
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	6065	6457	.	+	0	ID=NKBHOGAP_00008;Name=rpsI;db_xref=COG:COG0103;gene=rpsI;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P0A7X3;locus_tag=NKBHOGAP_00008;product=30S ribosomal protein S9
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	6769	7407	.	+	0	ID=NKBHOGAP_00009;Name=sspA;db_xref=COG:COG0625;gene=sspA;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P0ACA3;locus_tag=NKBHOGAP_00009;product=Stringent starvation protein A
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	7411	7905	.	+	0	ID=NKBHOGAP_00010;Name=sspB;db_xref=COG:COG2969;gene=sspB;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P0AFZ3;locus_tag=NKBHOGAP_00010;product=Stringent starvation protein B
+Scaffold_1_cov_18.34	Prodigal:002006	CDS	8030	8734	.	+	0	ID=NKBHOGAP_00011;eC_number=5.1.3.9;Name=nanE;db_xref=COG:COG3010;gene=nanE;inference=ab initio prediction:Prodigal:002006,similar to AA sequence:UniProtKB:P0A761;locus_tag=NKBHOGAP_00011;product=Putative N-acetylmannosamine-6-phosphate 2-epimerase

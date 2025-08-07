@@ -1,7 +1,17 @@
+from typing import List
 from bactgenome.contig import Contig
 
-def read_fasta(file_path):
-    contigs = []
+def read_fasta(file_path: str) -> List[Contig]:
+    """
+    Reads a FASTA file and returns a list of Contig objects.
+
+    Args:
+        file_path (str): The path to the FASTA file.
+
+    Returns:
+        list[Contig]: A list of Contig objects.
+    """
+    contigs: List[Contig] = []
     with open(file_path, "r") as f:
         name, desc, seq_lines = None, "", []
         for line in f:
@@ -22,7 +32,14 @@ def read_fasta(file_path):
             contigs.append(Contig(name, sequence, desc))
     return contigs
 
-def write_fasta(contigs, file_path):
+def write_fasta(contigs: List[Contig], file_path: str) -> None:
+    """
+    Writes a list of Contig objects to a FASTA file.
+
+    Args:
+        contigs (list[Contig]): A list of Contig objects to write.
+        file_path (str): The path to the output FASTA file.
+    """
     with open(file_path, "w") as f:
         for contig in contigs:
             header = f">{contig.name} {contig.description}\n".strip()

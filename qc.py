@@ -1,4 +1,16 @@
-def compute_stats(assembly):
+from typing import Dict, Any
+from bactgenome.assembly import Assembly
+
+def compute_stats(assembly: Assembly) -> Dict[str, Any]:
+    """
+    Computes a dictionary of statistics for a given assembly.
+
+    Args:
+        assembly (Assembly): The assembly to compute statistics for.
+
+    Returns:
+        dict: A dictionary of assembly statistics.
+    """
     return {
         "total_contigs": len(assembly.contigs),
         "total_length": assembly.total_length(),

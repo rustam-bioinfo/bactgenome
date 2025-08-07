@@ -32,6 +32,56 @@ class Assembly:
         self.annotations.extend(read_gff(gff_path))
         return self
 
+    def get_annotation_by_id(self, feature_id: str) -> Optional[Annotation]:
+        """
+        Finds an annotation by its ID attribute.
+
+        Args:
+            feature_id (str): The ID of the feature to find.
+
+        Returns:
+            Optional[Annotation]: The Annotation object if found, otherwise None.
+        """
+        for ann in self.annotations:
+            if ann.attributes.get("ID") == feature_id:
+                return ann
+        return None
+
+    @staticmethod
+    def _reverse_complement(seq: str) -> str:
+        """Computes the reverse complement of a DNA sequence."""
+        complement = str.maketrans("ATCG", "TAGC")
+        return seq.translate(complement)[::-1]
+
+    def get_sequence_for_annotation(self, annotation: Annotation) -> str:
+        """
+        Extracts the DNA sequence for a given annotation.
+
+        Args:
+            annotation (Annotation): The annotation for which to extract the sequence.
+
+        Returns:
+            str: The DNA sequence of the annotation.
+
+        Raises:
+            ValueError: If the contig for the annotation is not found in the assembly.
+        """
+        contig_map = {c.name: c for c in self.contigs}
+        contig = contig_map.get(annotation.contig)
+
+        if contig is None:
+            raise ValueError(f"Contig '{annotation.contig}' not found in assembly.")
+
+        # GFF coordinates are 1-based, Python slicing is 0-based
+        start = annotation.start - 1
+        end = annotation.end
+        sequence = contig.sequence[start:end]
+
+        if annotation.strand == '-':
+            return self._reverse_complement(sequence)
+
+        return sequence
+
     @classmethod
     def from_fasta(cls, file_path: str) -> Assembly:
         """
